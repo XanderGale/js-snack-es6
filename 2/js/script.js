@@ -23,14 +23,25 @@ const teams =
     },
 ];
 
+console.log(teams);
+
+const newTeams = [];
+
 for(let i = 0; i < teams.length; i++) {
 
     teams[i].teamPoints = getRndInteger(1, 100);
     teams[i].teamPenalties = getRndInteger(1, 50);
 
+    const {teamName, teamPenalties} = teams[i];
+
+    const copyTeam = {teamName, teamPenalties};
+
+    newTeams.push(copyTeam);
+
 }
 
 console.log(teams);
+console.log(newTeams);
 
 
 
