@@ -1,0 +1,34 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body{
+    background-color: white;
+}
+
+/* Main */
+#container{
+    width: 80%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.item{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background-color: lightgray;
+    border-radius: 30px;
+
+    min-width: 100%;
+    min-height: 200px;
+}
