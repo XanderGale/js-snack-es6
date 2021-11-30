@@ -22,16 +22,17 @@ let students = [
     { name: 'Francesca', id: 120, grades: 84 },
 ];
 
-let studentsTarghe = [];
+// Esercizio 1:
 
-students.forEach((students, index) => {
+// const targhe = students.map((element) => {
+//     return element.name.toUpperCase();
+// });
+// console.log(targhe);
 
-    const {name} = students;
+// Esercizio 2:
 
-    const studentTarga = name.toUpperCase();
-
-    studentsTarghe.push(studentTarga);
-
-    console.log(studentsTarghe);
-
+const sopra70 = students.filter((element) => {
+    return element.grades > 70;
 });
+
+console.log(sopra70);
