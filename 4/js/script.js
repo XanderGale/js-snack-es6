@@ -31,8 +31,16 @@ let students = [
 
 // Esercizio 2:
 
-const sopra70 = students.filter((element) => {
-    return element.grades > 70;
+// const sopra70 = students.filter((element) => {
+//     return element.grades > 70;
+// });
+
+// console.log(sopra70);
+
+// Esercizio 3:
+
+const gradeAndId = students.filter((element) => {
+    return element.grades > 70 && element.id > 120;
 });
 
-console.log(sopra70);
+console.log(gradeAndId);
