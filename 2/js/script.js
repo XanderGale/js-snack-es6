@@ -1,46 +1,44 @@
-// Creare un array di oggetti:
-// Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
-// Stampare a schermo la bici con peso minore utilizzando destructuring e template literal nel DOM
+// Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+// Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+// Generare numeri random al posto degli 0 nelle proprietà:
+// Punti fatti e falli subiti.
+// Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
-const bicycles = 
+const teams =
 [
     {
-        bicycleName: 'BMX',
-        bicycleWeight: 15
+        teamName: 'Milan',
+        teamPoints: 0,
+        teamPenalties: 0,
     },
     {
-        bicycleName: 'Rider 9000',
-        bicycleWeight: 5 
+        teamName: 'Inter',
+        teamPoints: 0,
+        teamPenalties: 0,
     },
     {
-        bicycleName: 'Street 283',
-        bicycleWeight: 10
-    }
+        teamName: 'Juventus',
+        teamPoints: 0,
+        teamPenalties: 0,
+    },
 ];
 
-// Imposto la bicicletta con il peso minimo di default:
+for(let i = 0; i < teams.length; i++) {
 
-let defaultLighterBicycle = bicycles[0];
+    teams[i].teamPoints = getRndInteger(1, 100);
+    teams[i].teamPenalties = getRndInteger(1, 50);
 
-// Analizzo ogni bicicletta
-for( let i = 0; i < bicycles.length; i++ ) {
+}
 
-    if(bicycles[i].bicycleWeight < defaultLighterBicycle.bicycleWeight) {
-        defaultLighterBicycle = bicycles[i];
-    }
+console.log(teams);
+
+
+
+
+
+
+// FUNCTIONS
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
-
-// console.log(defaultLighterBicycle);
-
-const {bicycleName, bicycleWeight} = defaultLighterBicycle;
-
-const itemTemplate = `
-    <div class="item">
-        <h2>Nome: ${bicycleName}</h2>
-        <h3>Peso: ${bicycleWeight} Kg</h3>
-    </div>
-`;
-
-const pageContainer = document.getElementById('container');
-
-pageContainer.innerHTML = itemTemplate;
